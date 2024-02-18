@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --body-background-color:#04669D;
+    --input-box-numbers-color:#FFFFFE;
+    --number-buttons-background-color:#56534F;
+    --operator-buttons-background-color:#C98A03;
+    --extra-buttons-background-color:#A8A29E;
+    --calculator-background-color:#1B1917;
+    --calculator-border-color:#010000;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--body-background-color);
+}
+
+#root{
+    max-width: 500px;
+    width: 480px;
+    position: relative;
+    height: 700px;
+    background-color: var(--calculator-background-color);
+    border-radius: 20px;
+    border: 7px solid var(--calculator-border-color);
+    /* margin: 5px; */
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(6 , 1fr);
+    /* justify-items: center; */
+    /* align-content: center; */
+
+    grid-template-areas: 
+            "element_1 element_1 element_1 element_1"
+            "element_2 element_3 element_4 element_5"
+            "element_6 element_7 element_8 element_9"
+            "element_10 element_11 element_12 element_13"
+            "element_14 element_15 element_16 element_17"
+            "element_18 element_18 element_19 element_20";
+    row-gap: 10px;
+    column-gap: 5px;
+    padding: 5px;
+}
+
+
+.DisplayBox{
+    /* margin-bottom: 20px ; */
+    background-color: unset;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-size: 50px;
+    color: #FFF;
+    /* pointer-events: none; */
+    /* caret-color: unset; */
+    padding: 10px;
+    overflow: hidden;
+}
+
+
+button{
+    /* width: 100px; */
+    /* height: 100px; */
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+button:active{
+    /* color: #010000; */
+    scale: 1.1;
+    transition: .4s;
+}
+
+.ZeroElement{
+    border-radius: 100px;
+}
+
+
+
+.preLoader{
+    color: #FFF;
+    width: 100%;
+    /* background-color: yellow; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+}
+
+@media (max-width:500px){
+    #root{
+        height: 100vh;
+        width: 100vw;
+        /* scale: .9; */
+        border-radius: 0;
+        border: none;
+    }
+}
